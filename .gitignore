@@ -1,0 +1,6 @@
+/*
+!.gitignore
+!README.md
+!.emacs.d/
+.emacs.d/*
+!.emacs.d/init.el
