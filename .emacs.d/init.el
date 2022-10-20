@@ -1,12 +1,19 @@
-
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 ;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
 ;; and `package-pinned-packages`. Most users will not need or want to do this.
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 
 (package-initialize)
+
+(setq package-list '(use-package))
+
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+
 (package-install 'poet-theme)
 (if (display-graphic-p) (load-theme 'poet t))
 (unless (package-installed-p 'clojure-mode)
@@ -31,7 +38,11 @@
  '(custom-safe-themes
    '("2d035eb93f92384d11f18ed00930e5cc9964281915689fa035719cab71766a15" default))
  '(initial-frame-alist '((fullscreen . maximized)))
- '(package-selected-packages '(paredit clojure-mode)))
+ '(org-agenda-files
+   '("~/org/agendas/personal.org" "~/org/agendas/brasil-paralelo.org" "~/org/agendas/paroquia-mogi.org"))
+ '(org-log-done 'time)
+ '(package-selected-packages
+   '(pdf-tools plantuml-mode poet-theme org-drill paredit clojure-mode)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
