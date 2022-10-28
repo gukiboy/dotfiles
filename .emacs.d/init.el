@@ -39,7 +39,7 @@
    '("2d035eb93f92384d11f18ed00930e5cc9964281915689fa035719cab71766a15" default))
  '(initial-frame-alist '((fullscreen . maximized)))
  '(org-agenda-files
-   '("~/org/agendas/personal.org" "~/org/agendas/brasil-paralelo.org" "~/org/agendas/paroquia-mogi.org"))
+   '("~/org/agendas/personal.org" "~/org/agendas/brasil-paralelo.org" "~/org/agendas/paroquia-mogi.org" "~/org/agendas/clojure-type-system.org"))
  '(org-log-done 'time)
  '(package-selected-packages
    '(pdf-tools plantuml-mode poet-theme org-drill paredit clojure-mode)))
