@@ -1,9 +1,6 @@
 (require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
-;; and `package-pinned-packages`. Most users will not need or want to do this.
-;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-
 
 (package-initialize)
 
@@ -29,6 +26,8 @@
 (add-hook 'cider-mode-hook #'paredit-mode)
 (add-hook 'clojure-mode-hook #'paredit-mode)
 
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -42,7 +41,7 @@
    '("~/org/agendas/personal.org" "~/org/agendas/brasil-paralelo.org" "~/org/agendas/paroquia-mogi.org" "~/org/agendas/clojure-type-system.org"))
  '(org-log-done 'time)
  '(package-selected-packages
-   '(pdf-tools plantuml-mode poet-theme org-drill paredit clojure-mode)))
+   '(pdf-tools ## plantuml-mode poet-theme org-drill paredit clojure-mode)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
