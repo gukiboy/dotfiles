@@ -10,6 +10,9 @@
   (unless (package-installed-p package)
     (package-install package)))
 
+(use-package ob-clojure)
+(require 'cider)
+(setq org-babel-clojure-backend 'cider)
 
 (package-install 'poet-theme)
 (if (display-graphic-p) (load-theme 'poet t))
@@ -26,8 +29,6 @@
 (add-hook 'cider-mode-hook #'paredit-mode)
 (add-hook 'clojure-mode-hook #'paredit-mode)
 
-
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -41,7 +42,7 @@
    '("~/org/agendas/personal.org" "~/org/agendas/brasil-paralelo.org" "~/org/agendas/paroquia-mogi.org" "~/org/agendas/clojure-type-system.org"))
  '(org-log-done 'time)
  '(package-selected-packages
-   '(pdf-tools ## plantuml-mode poet-theme org-drill paredit clojure-mode)))
+   '(ob-clojurescript org-babel-eval-in-repl pdf-tools ## plantuml-mode poet-theme org-drill paredit clojure-mode)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
