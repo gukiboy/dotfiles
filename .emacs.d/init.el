@@ -28,6 +28,31 @@
 (add-hook 'cider-repl-mode-hook #'paredit-mode)
 (add-hook 'cider-mode-hook #'paredit-mode)
 (add-hook 'clojure-mode-hook #'paredit-mode)
+(add-hook 'haskell-mode-hook #'lsp)
+(add-hook 'haskell-literate-mode-hook #'lsp)
+
+(require 'inf-haskell)
+
+(helm-mode)
+(require 'helm-xref)
+(define-key global-map [remap find-file] #'helm-find-files)
+(define-key global-map [remap execute-extended-command] #'helm-M-x)
+(define-key global-map [remap switch-to-buffer] #'helm-mini)
+(with-eval-after-load 'js
+  (define-key js-mode-map (kbd "M-.") nil))
+
+(setq gc-cons-threshold (* 100 1024 1024)
+      read-process-output-max (* 1024 1024)
+      company-idle-delay 0.0
+      company-minimum-prefix-length 1
+      create-lockfiles nil)
+
+(require 'prettier-js)
+(use-package prettier-js
+  :defer t
+  :diminish prettier-js-mode
+  :hook (((js2-mode rjsx-mode) . prettier-js-mode)))
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -43,6 +68,7 @@
  '(org-log-done 'time)
  '(package-selected-packages
    '(ob-clojurescript org-babel-eval-in-repl pdf-tools ## plantuml-mode poet-theme org-drill paredit clojure-mode)))
+
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
