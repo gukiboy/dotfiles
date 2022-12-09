@@ -67,7 +67,7 @@
    '("~/org/agendas/personal.org" "~/org/agendas/brasil-paralelo.org" "~/org/agendas/paroquia-mogi.org" "~/org/agendas/clojure-type-system.org"))
  '(org-log-done 'time)
  '(package-selected-packages
-   '(ob-clojurescript org-babel-eval-in-repl pdf-tools ## plantuml-mode poet-theme org-drill paredit clojure-mode)))
+   '(gnuplot-mode gnuplot ob-clojurescript org-babel-eval-in-repl pdf-tools ## plantuml-mode poet-theme org-drill paredit clojure-mode)))
 
 
 (custom-set-faces
