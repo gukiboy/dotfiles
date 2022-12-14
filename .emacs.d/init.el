@@ -66,8 +66,20 @@
  '(org-agenda-files
    '("~/org/agendas/personal.org" "~/org/agendas/brasil-paralelo.org" "~/org/agendas/paroquia-mogi.org" "~/org/agendas/clojure-type-system.org"))
  '(org-log-done 'time)
+ '(org-plantuml-jar-path "/Users/gustavokishima/plantuml.jar")
  '(package-selected-packages
    '(gnuplot-mode gnuplot ob-clojurescript org-babel-eval-in-repl pdf-tools ## plantuml-mode poet-theme org-drill paredit clojure-mode)))
+
+(add-hook 'org-babel-after-execute-hook
+          (lambda ()
+            (when org-inline-image-overlays
+              (org-redisplay-inline-images))))
+
+;; active Babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((gnuplot . t)))
+;; add additional languages with '((language . t)))
 
 
 (custom-set-faces
