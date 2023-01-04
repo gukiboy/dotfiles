@@ -80,7 +80,7 @@
  'org-babel-load-languages
  '((gnuplot . t)))
 ;; add additional languages with '((language . t)))
-
+(add-hook 'after-init-hook 'global-company-mode)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
